@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 200;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.input{
+    width: 100%;
+    height: 20vh;
+    border: 0.5px solid grey;
+    background-color: lightblue;
+    color: black;
+    font-size: 5vh;
+    font-weight: 200;
+    padding: 1vh;
+    overflow: hidden;
+}
+
+.buttons{
+    margin: 0;
+    font-size: 40px;
+    text-align: center;
+    width: 100vw;
+    height: 80vh;
+    color: white;
+    background-color: lightseagreen;
+}
+
+.buttons div{
+    padding: 1.5vh 0 1.5vh 0;
+}
+
+/*operators click effect*/
+.buttons .plus:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .minus:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .times:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .divide:active{
+    color: lightseagreen;
+    background-color: white;
+}
+
+/*numbers click effect*/
+.buttons .nine:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .eight:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .seven:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .six:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .five:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .four:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .three:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .two:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .one:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .equal:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .zero:active{
+    color: lightseagreen;
+    background-color: white;
+}
+.buttons .clear:active{
+    color: lightseagreen;
+    background-color: white;
+}
+
+
+
+.operators{
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.operators div{
+    border: 0.5px solid grey;
+}
+
+.threetimesthree{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.threetimesthree div{
+    border: 0.5px solid grey;
+}
+
+.zero{
+    width: 100%;
+    border: 0.5px solid grey;
+}
+.equal{
+    width: 100%;
+    border: 0.5px solid grey;
+}
+.clear{
+    width: 100%;
+    border: 0.5px solid grey;
+}
