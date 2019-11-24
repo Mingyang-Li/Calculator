@@ -4,15 +4,16 @@ const clickedNumAndOps = document.querySelectorAll(".threetimesthree,.zero，.op
 const calculate = document.getElementById("equal");
 const clear = document.getElementById("clear");
 const input = document.getElementById("input");
-const inputString = input.innerHTML;
 const resultDisplayed = false;
 
 //get user input before they click "=" sign
 for (var i = 0; i < clickedNumAndOps.length; i++){
     if (clickedNumAndOps[i].clicked == true){
-        inputString += clickedNumAndOps[i];
+        input.innerHTML += clickedNumAndOps[i];
     }
 }
+// store user input string into one single variable
+const inputString = input.innerHTML;
 
 //split input string by operators so we have an array of numbers 
 const numbers = inputString.split(/ \+ | \- | \* | \/ /);
@@ -29,17 +30,19 @@ function toCalculate(inputString, numbers, operators, resultDisplayed){
             second = numbers[divideIndex+1];
             newNum = first / second;
             numbers.splice(numbers.indexOf(first), 2, newNum);
+            divideInStrIndex = inputString.indexOf("/");
+            inputString.slice(divideInStrIndex);
         } 
-        inputString -= "/"
-    
+        
         while ("*" in inputString && inputString.indexOf("*" != -1)){
             timesIndex = operators.indexOf("*");
             first = numbers[timesIndex];
             second = numbers[timesIndex+1];
             newNum = first * second;
             numbers.splice(numbers.indexOf(first), 2, newNum);
+            timesInStrIndex = inputString.indexOf("*");
+            inputString.slice(timesInStrIndex);
         }
-        inputString -= "*"
     
         while ("+" in inputString && inputString.indexOf("+" != -1)){
             plusIndex = operators.indexOf("+");
@@ -47,7 +50,9 @@ function toCalculate(inputString, numbers, operators, resultDisplayed){
             second = numbers[plusIndex+1];
             newNum = parseFloat(first) + parseFloat(second);
             numbers.splice(numbers.indexOf(first), 2, newNum);
-        }inputString -= "+"
+            plusInStrIndex = inputString.indexOf("+");
+            inputString.slice(plusInStrIndex);
+        }
     
         while ("-" in inputString && inputString.indexOf("-" != -1)){
             minusIndex = operators.indexOf("-");
@@ -55,10 +60,11 @@ function toCalculate(inputString, numbers, operators, resultDisplayed){
             second = numbers[minusIndex+1];
             newNum = parseFloat(first) - parseFloat(second);
             numbers.splice(numbers.indexOf(first), 2, newNum);
+            minusInStrIndex = inputString.indexOf("-");
+            inputString.slice(minusInStrIndex);
         }
-        inputString -= "-"
+        resultDisdplayed = !resultDisdplayed;
     }
-    resultDisdplayed = !resultDisdplayed;
 }
 
 //function to clear
@@ -67,7 +73,7 @@ function toClear(){
 }
 
 //event handler for equal/calculate button
-calculate.addEventListener("click", calculate());
+calculate.addEventListener("click", toCalculate());
 
 //event handler to clear button
 clear.addEventListener("click", toClear());
