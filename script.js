@@ -1,17 +1,62 @@
 // define variables for buttons
+var clear = document.getElementById("clear");
+var equal = document.getElementById("equal");
+var allOtherButtons = document.getElementsByClassName("character");
+var inputField = document.getElementById("input");
 
-let clickedNumAndOps = document.querySelectorAll(".threetimesthree,.zero，.operators");
-let calculate = document.getElementById("equal");
-let clear = document.getElementById("clear");
-let input = document.getElementById("input");
-let resultDisplayed = false;
+for (let i = 0; i < allOtherButtons.length; i++){
+    button = allOtherButtons[i];
+    button.addEventListener("click", function(){
+        inputField.value += button.value;
+        console.log(typeof(button));
+    })
+};
+
+
+//function to calculate
+/* 
+function calculate(){
+    pass
+}
+
+
+
+clear.addEventListener("click", function(){
+    inputField.innerHTML = "";
+})
+
+
+equal.addEventListener("click", calculate())
+*/
+
+
+/*
+var numAndOps = document.querySelectorAll(".threetimesthree, .zero, .operators").children;
+var input = document.getElementById("input");
+for (let i = 0; i < numAndOps.length; i++){
+    numAndOps[i].addEventListener("click", function(){
+        input.innerHTML += numAndOps[i];
+    }()); 
+}
+
+var calculate = document.getElementById("equal");
+var clear = document.getElementById("clear");
+var input = document.getElementById("input");
+var resultDisplayed = false;
+
 
 //get user input before they click "=" sign
-for (var i = 0; i < clickedNumAndOps.length; i++){
-    if (clickedNumAndOps[i].clicked == true){
-        input.innerHTML += clickedNumAndOps[i];
+for (var i = 0; i < numAndOps.length; i++){
+    if (numAndOps[i].clicked == true){
+        input.innerHTML += numAndOps[i];
     }
 }
+
+for (let i = 0; i < numAndOps.length; i++){
+    numAndOps[i].addEventListener("click", addInput(numAndOps[i]));
+}
+
+
 // store user input string into one single variable
 let inputString = input.innerHTML;
 
@@ -32,6 +77,7 @@ function toCalculate(inputString, numbers, operators, resultDisplayed){
             numbers.splice(numbers.indexOf(first), 2, newNum);
             divideInStrIndex = inputString.indexOf("/");
             inputString.splice(divideInStrIndex, 1);
+            operators.splice(divideIndex, 1);
         } 
         
         while ("*" in inputString && inputString.indexOf("*")!= inputString.length-1){
@@ -63,7 +109,7 @@ function toCalculate(inputString, numbers, operators, resultDisplayed){
             minusInStrIndex = inputString.indexOf("-");
             inputString.splice(minusInStrIndex, 1);
         }
-        resultDisdplayed = !resultDisdplayed;
+        resultDisdplayed = true;
     }
 }
 
@@ -72,10 +118,15 @@ function toClear(){
     input.innerHTML = "";
 }
 
+//function to write to input field
+function addInput(char) {
+    input.innerHTML += char;
+}
+
 //event handler for equal/calculate button
 calculate.addEventListener("click", toCalculate());
 
 //event handler to clear button
 clear.addEventListener("click", toClear());
 
-
+*/

@@ -8,39 +8,50 @@
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>Calculator</title>
 </head>
+
+
 <body>
-    <div class="input" id = "input"></div>
+    <input class="input" id = "input" type = "text" placeholder="Your input will appear in here" style = "font-size: 100%">
     <div class="buttons">
         <!--operators-->
-        <div class="operators">
-            <div class="plus" id = "plus">+</div>
-            <div class="minus" id = "minus">-</div>
-            <div class="times" id = "times">*</div>
-            <div class="divide" id = "divide">/</div>
+        <div class="operators" id="operators">
+            <div class="plus character" id = "+">+</div>
+            <div class="minus character" id = "-">-</div>
+            <div class="times character" id = "*">*</div>
+            <div class="divide character" id = "/">/</div>
         </div>
         <!--numbers-->
-        <div class="threetimesthree">
+        <div class="threetimesthree" id = "threetimesthree">
             <!--7,8,9-->
-            <div class="seven" id = "seven">7</div>
-            <div class="eight" id = "eight">8</div>
-            <div class="nine" id = "nine">9</div>
+            <div class="seven character" id = "7">7</div>
+            <div class="eight character" id = "8">8</div>
+            <div class="nine character" id = "9">9</div>
             <!--4,5,6-->
-            <div class="four" id = "four">4</div>
-            <div class="five" id = "five">5</div>
-            <div class="six" id = "six">6</div>
+            <div class="four character" id = "4">4</div>
+            <div class="five character" id = "5">5</div>
+            <div class="six character" id = "6">6</div>
             <!--1,2,3-->
-            <div class="one" id = "one">1</div>
-            <div class="two" id = "two">2</div>
-            <div class="three" id = "three">3</div>
+            <div class="one character" id = "1">1</div>
+            <div class="two character" id = "2">2</div>
+            <div class="thre character" id = "3">3</div>
         </div>
 
         <!--equal-->
         <div class="equal" id = "equal">=</div>
         <!--0-->
-        <div class="zero" id = "zero">0</div>
+        <div class="zero character" id = "0">0</div>
         <!--clear-->
-        <div class="clear" id = "clear">CLEAR</div>
+        <div class="clear" id = "clear" onclick = "clearInput()">CLEAR</div>
     </div>
+    <select name="test" id="test">
+        <option>choose an acc</option>
+        <option>cheque</option>
+        <option>online</option>
+        <option>usd</option>
+    </select>
+
+
+
     <script src = "script.js"></script>
 </body>
 </html>
